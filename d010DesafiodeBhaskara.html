@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio De Bhaskara</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font: normal 15pt Arial;
+        }
+    </style> 
+</head>
+<body>
+    
+    <div>
+        <h1>RESOLVENDO BHASKARA</h1>
+        <input type="button" value="CALCULAR" style="font: bold 15pt Arial; width: 150px; height: 50px; border-radius: 10px;" onclick="calcular()">
+    </div>
+    <div id="res">
+        <p>Considerando uma equação no formato <strong>a</strong>x² <strong>+ b</strong>x <strong>+ c</strong> = 0, 
+            aperte o botão acima para calcular o valor de ▲.<p>
+            <script>
+                function calcular() {
+                    var a = Number(prompt('Qual o valor de a?'))
+                    var b = Number(prompt('Qual o valor de b?'))
+                    var c = Number(prompt('Qual o valor de c?'))
+
+                    var delta = b*b-4*a*c
+
+                    if (isNaN(delta)) {
+                        alert('[ERRO] POR FAVOR VERIFICAR, OS 3 VALORES PRECISAM SER NÚMERICOS!')
+                        //res.innerHTML = ('[ERRO] POR FAVOR VERIFICAR, OS 3 VALORES PRECISAM SER NÚMERICOS!') como alert ficou mais interessante
+                    } else {
+                        res.innerHTML = (`<p>A equação atual é <strong>${a}x² + ${b}x + ${c} = 0</strong><p>
+                        O cálculo realizado será <strong>▲ = ${b}² - 4 . ${a} . ${c}</strong><p>
+                        O valor calculado foi <mark><strong>▲ = ${delta}</strong></mark>`)
+                        }
+                }
+            </script>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar Salário</title>
+</head>
+<body>
+    <div>
+        <h1>Reajuste Salarial</h1>
+        <input type="button" value="Reajustar Salário" style="width: 200px; height: 50px;" onclick = "ola()">       
+    </div>
+
+    <div id="res">
+        <p>Clique no botão acima para iniciar.<p>
+            <script>
+                function ola () {
+                    var nome = prompt('Qual o nome do funcionário?')
+                    var salario = Number(prompt(`Qual o salário da/o ${nome}?`))
+                    var perc = Number(prompt(`O salário da/o ${nome} será reajustado em qual porcentagem?`))
+                    var percajust = perc/100
+                    var salarajust = (salario * percajust) + salario
+                    var difersalar = salarajust-salario
+                    var salario = salario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); 
+                    var salarajust = salarajust.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    var difersalar = difersalar.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
+                    res.innerHTML = (`<p><h2>${nome} recebeu um aumento salarial!</h2></p>O salário atual era de <strong>${salario}</strong>.<p>
+                        Com o aumento de ${perc}%, o salário vai aumentar ${difersalar} no próximo mês.<p>
+                            <strong>${nome}</strong> passará a ganhar <strong>${salarajust}</strong> no próximo mês.<p>`)
+                }
+            </script>
+
+    </div>
+    
+</body>
+</html>

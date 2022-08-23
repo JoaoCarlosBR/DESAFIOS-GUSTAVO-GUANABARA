@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Trocot</title>
+</head>
+<body>
+    <div>
+        <h1>CALCULANDO O TROCO</h1>
+            <input type="button" value="Comprar produto" style="width: 150px; height: 50px; font: bold 12pt Lucida;" onclick="calcular()">           
+            
+        <script>
+            function calcular() {
+                
+                var produto = prompt('Qual produto você está comprado?')
+                var preco = Number (prompt(`Quanto custa o/a ${produto} que você está comprando?`))
+                var dinheiro = Number (prompt(`Quanto em dinheiro você está dando para pagar pelo/a ${produto}`))
+                var troco = dinheiro - preco
+                
+                var preco2c = preco.toFixed(2).replace('.', ',')
+                var dinheiro2c = dinheiro.toFixed(2).replace('.', ',')
+                var troco2c = troco.toFixed(2).replace('.', ',')
+                                
+                var precobrl = preco2c.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); // não tá funcionando vou deixar escrito no alert o R$
+                var dinheirobrl = dinheiro2c.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });// não tá funcionando vou deixar escrito no alert o R$
+                var trocobrl = troco2c.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });          // não tá funcionando vou deixar escrito no alert o R$                  
+                
+                
+                alert(`Você comprou ${produto} que custa R$${precobrl}.
+Você deu R$${dinheirobrl} em dinheiro e receberá troco de R$${trocobrl}.
+Volte sempre! `)
+
+
+               // preco.toFixed(2).replace('.', ',')
+               // dinheiro.toFixed(2).replace('.', ',')
+               // troco.toFixed(2).replace('.', ',')
+
+                //preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+               // dinheiro.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+               // troco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+               // preco.toFixed(2).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+               //dinheiro.toFixed(2).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+               // troco.toFixed(2).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+
+            }
+        </script>
+    </div>
+    
+</body>
+</html>

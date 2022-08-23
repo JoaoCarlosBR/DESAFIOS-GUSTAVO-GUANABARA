@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Antes e Depois</title>
+</head>
+<body>
+    <div>
+        <h1> ANTES E DEPOIS</h1>
+        <input type="button" value="Antecessor e Sucessor" style="width: 200px; height: 80px; font: bold 12pt Arial; background-color: magenta;" onclick="calcular()">
+        <script>
+            function calcular() {
+                n1 = Number.parseInt(window.prompt('Insira um número inteiro qualquer'))                
+                var nanterior = n1-1
+                var nposterior = n1+1
+                window.alert(`Antes de ${n1}, temos ${nanterior}.
+Depois de ${n1}, temos ${nposterior}.` )
+            }
+        </script>
+    </div>
+    
+</body>
+</html>

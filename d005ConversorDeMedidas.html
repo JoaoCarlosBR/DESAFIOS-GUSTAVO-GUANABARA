@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+</head>
+<body>
+    <div>
+        <h1>CONVERSOR DE MEDIDAS</h1>
+        <input type="button" value="Converter" style="width: 150px; height: 60px; font: bold 12pt Arial;" onclick="converter()">
+        <script>
+            function converter() {
+                let medida = Number (prompt('Digite uma distância em metros (utilize . para separar casas decimais) e NÃO utilize separador nos milhares'))
+                var res = document.querySelector('div#res')
+                var nkm = medida/1000
+                var nkmm = nkm.toFixed(2).replace('.', ',')
+                var ndm = medida/100
+                var ndmm = ndm.toFixed(2).replace('.', ',')
+                var ndam = medida/10
+                var ndamm = ndam.toFixed(2).replace('.', ',')
+                var ndmmm = medida*10
+                var ndmmmp = ndmmm.toFixed(2).replace('.', ',')
+                var ncm = medida*100
+                var ncmm = ncm.toFixed(2).replace('.', ',')
+                var nmm = medida*1000
+                var nmmm = nmm.toFixed(2).replace('.', ',')
+
+                res.innerHTML = `Essa medida em KM são <strong> ${nkmm}KM </strong>.<p>Em DM temos <strong> ${ndmm}DM </strong> (Decametro).<p>
+                    Em Dam temos <strong>${ndamm}Dam</strong> (Decametro).<p>Em dm temos <strong>${ndmmmp}dm</strong> (Decimetro).<p>
+                    Em cm temos <strong>${ncmm}cm</strong> (Centimetro).<p> Em mm temos <strong>${nmmm}mm</strong> (milimetro).<p> `
+            }
+            
+        </script>
+
+    </div>
+
+    <div id="res">
+        <h3>Clique no botão acima para iniciar.</h3>
+    </div>
+</body>
+</html>

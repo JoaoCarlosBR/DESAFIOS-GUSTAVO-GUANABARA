@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor De Temperatura</title>
+</head>
+<body>
+    <div>
+        <h1>CONVERSOR DE TEMPERATURAS</h1>
+        <input type="button" value="Converter" style="width: 100px; height: 50px;" onclick="calcular()">
+
+        <div id="res">
+            <h3>Clique no botão acima para iniciar.</h3>        
+            <script>
+                function calcular() {
+                    var celsius = Number (prompt('Digite uma temperatura em °C(Celsius), use . em casa decimal.'))
+                    var res = document.querySelector('div#res')                    
+                    var kel = (celsius + 273.15) //1 Kelvin = 274,15 zero é 273,15
+                    var far = ((celsius * 9/5) + 32) //1 fahrenheit = 33,8 zero é 32
+                    var celsiusv = celsius.toFixed(2).replace('.', ',')
+                    var kelv = kel.toFixed(2).replace('.', ',')
+                    var farv = far.toFixed(2).replace('.', ',')
+                    
+                    res.innerHTML = `<h2>A temperatura de ${celsiusv}°C, corresponde a...<h2><p> ${kelv}°K (Kelvin).<p> ${farv}°F (Fahrenheit).<p>`
+                }
+
+            </script>
+
+        </div>
+
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+    <div>
+        <script>
+            var cotacao = Number(prompt('Antes de mais nada. Quanto está a cotação do dólar agora? (Use . para separar centavos.)'))
+        </script>
+
+    </div>
+    <div>
+        <h1>CONVERSOR R$ ===> US$</h1><p>
+        <input type="button" value="COnverter" style="width: 100px; height: 50px; box-shadow: 10px 5px 5px green; " onclick="converter()">
+
+        <div id="res">
+            <p><h4>Clique no botão acima para iniciar.</h4></p>        
+            <script>
+                function converter() {
+                    var carteira = Number(prompt('Quantos R$ tem na carteira? (Use . para separar centavos.)'))
+                    var res = document.querySelector('div#res') 
+                    var calculo = carteira / cotacao
+                    var cotacaop = cotacao.toFixed(2).replace('.', ',')
+                    var carteirap = carteira.toFixed(2).replace('.', ',')
+                    var calculop = calculo.toFixed(2).replace('.', ',')
+
+                    res.innerHTML = `Com a cotação de R$${cotacaop} para cada dólar, e com você possuindo R$${carteirap} em carteira.<p> Você conseguirá comprar <strong>US$${calculop}</strong>. `
+                }
+            </script>
+
+
+        </div>
+
+    </div>
+
+    <div>
+
+    </div>
+    
+</body>
+</html>
